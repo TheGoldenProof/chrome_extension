@@ -1,0 +1,27 @@
+{
+	"name": "Name",
+	"description": "Description",
+	"version": "1.0",
+	"manifest_version": 2,
+	"permissions": ["declarativeContent","storage"],
+	"options_page": "options.html",
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"page_action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "images/ksp16.png",
+			"32": "images/ksp32.png",
+        	"48": "images/ksp48.png",
+        	"128": "images/ksp128.png"
+		}
+	},
+	"icons": {
+      "16": "images/ksp16.png",
+      "32": "images/ksp32.png",
+      "48": "images/ksp48.png",
+      "128": "images/ksp128.png"
+    }
+}
