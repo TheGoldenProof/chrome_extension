@@ -1,10 +1,16 @@
 {
 	"name": "Name",
 	"description": "Description",
-	"version": "1.0",
+	"version": "2020.1.0",
 	"manifest_version": 2,
-	"permissions": ["declarativeContent","storage"],
-	"options_page": "options.html",
+	"permissions": [
+		"declarativeContent",
+		"storage"
+	],
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": false
+	},
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
