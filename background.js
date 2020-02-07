@@ -1,18 +1,12 @@
 chrome.runtime.onInstalled.addListener(function() {
 	chrome.storage.sync.get('langPath', function(data) {
 		if (typeof data.langPath === 'undefined') {
-			chrome.storage.sync.set({langPath: 'lang/@@ui_locale/default.json'}, function() {
+			chrome.storage.sync.set({langPath: 'lang/'+chrome.i18n.getUILanguage()+'/default.json'}, function() {
 				loadLang();
 			});
 		} else {
 			loadLang();
 		}
-	});
-	chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-		chrome.declarativeContent.onPageChanged.addRules([{
-			conditions: [new chrome.declarativeContent.PageStateMatcher({})],
-			actions: [new chrome.declarativeContent.ShowPageAction()]
-		}]);
 	});
 });
 
