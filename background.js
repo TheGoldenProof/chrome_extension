@@ -1,18 +1,18 @@
 chrome.runtime.onInstalled.addListener(function() {
-	chrome.storage.sync.get('langPath', function(data) {
-		if (typeof data.langPath === 'undefined') {
-			chrome.storage.sync.set({langPath: 'lang/'+chrome.i18n.getUILanguage()+'/default.json'}, function() {
-				loadLang();
+	chrome.storage.sync.get('persona', function(data) {
+		if (typeof data.persona === 'undefined') {
+			chrome.storage.sync.set({persona: 'default'}, function() {
+				loadPersona();
 			});
 		} else {
-			loadLang();
+			loadPersona();
 		}
 	});
 });
 
-function loadLang() {
-	chrome.storage.sync.get('langPath', function(data) {
-		loadJSON(data.langPath, function(response) {
+function loadPersona() {
+	chrome.storage.sync.get('persona', function(data) {
+		loadJSON('personas/'+data.persona+'/'+chrome.i18n.getUILanguage()+'.json', function(response) {
 			chrome.storage.local.set({lang: JSON.parse(response)});
 		});
 	});

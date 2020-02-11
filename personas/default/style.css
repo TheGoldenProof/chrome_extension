@@ -1,0 +1,11 @@
+body {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/personas/default/images/background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+}
+
+h1 {
+	color: #e0e0e0;
+}
